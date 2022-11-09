@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/form"
+    app:startDestination="@id/registerScreen">
+
+    <fragment
+            android:id="@+id/registerScreen"
+            android:name="com.itomych.backstack_sample.child.formscreen.RegisterFragment"
+            android:label="@string/title_register"
+            tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_registered"
+            app:destination="@id/registeredScreen"/>
+    </fragment>
+    <fragment
+        android:id="@+id/registeredScreen"
+        android:name="com.itomych.backstack_sample.child.formscreen.RegisteredFragment"
+        android:label="Registered"
+        tools:layout="@layout/fragment_registered"/>
+</navigation>

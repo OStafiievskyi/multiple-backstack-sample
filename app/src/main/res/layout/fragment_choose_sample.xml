@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnWithoutMultipleBackStack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Without Multiple BackStack" />
+
+    <Button
+        android:id="@+id/btnNestedRootFragments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nested Root Fragments" />
+
+    <Button
+        android:id="@+id/btnMultipleBackStack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Multiple BackStack" />
+
+    <Button
+        android:id="@+id/btnNavigationComponentDefault"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigation Component Default BackStack" />
+
+    <Button
+        android:id="@+id/btnNavigationComponentMultipleBackStack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigation Component Multiple BackStack XML Setup" />
+
+    <Button
+        android:id="@+id/btnNavigationComponentMultipleBackStackDynamic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigation Component Multiple BackStack Dynamic setup" />
+
+</LinearLayout>

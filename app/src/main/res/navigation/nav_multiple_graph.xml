@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_multiple"
+    app:startDestination="@+id/welcomeScreen">
+
+    <fragment
+        android:id="@+id/welcomeScreen"
+        android:name="com.itomych.backstack_sample.child.homescreen.WelcomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcome_to_about"
+            app:destination="@id/aboutScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutScreen"
+        android:name="com.itomych.backstack_sample.child.homescreen.AboutFragment"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/usersScreen"
+        android:name="com.itomych.backstack_sample.child.listscreen.UsersFragment"
+        android:label="@string/title_list"
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/action_users_to_userProfile"
+            app:destination="@id/userProfileScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileScreen"
+        android:name="com.itomych.backstack_sample.child.listscreen.UserProfileFragment"
+        android:label="@string/title_detail"
+        tools:layout="@layout/fragment_user_profile">
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="www.example.com/user/{userName}" />
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="com.itomych.backstack_sample.child.formscreen.RegisterFragment"
+        android:label="@string/title_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_registered"
+            app:destination="@id/registeredScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registeredScreen"
+        android:name="com.itomych.backstack_sample.child.formscreen.RegisteredFragment"
+        android:label="Registered"
+        tools:layout="@layout/fragment_registered" />
+
+    <action
+        android:id="@+id/home"
+        app:destination="@+id/welcomeScreen"
+        app:popUpTo="@id/welcomeScreen"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
+    <action
+        android:id="@+id/list"
+        app:destination="@+id/usersScreen"
+        app:popUpTo="@+id/welcomeScreen"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
+    <action
+        android:id="@+id/form"
+        app:destination="@+id/registerScreen"
+        app:popUpTo="@+id/welcomeScreen"
+        app:popUpToSaveState="true"
+        app:restoreState="true" />
+
+</navigation>
