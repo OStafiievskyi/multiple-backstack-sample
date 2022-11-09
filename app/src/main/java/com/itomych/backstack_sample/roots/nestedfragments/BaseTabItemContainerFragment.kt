@@ -30,16 +30,12 @@ abstract class BaseTabItemContainerFragment(@LayoutRes layout: Int) :
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(
-            viewLifecycleOwner,
+            this,
             backPressedCallback
         )
-        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

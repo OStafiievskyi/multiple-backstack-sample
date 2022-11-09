@@ -35,10 +35,6 @@
         android:name="com.itomych.backstack_sample.child.listscreen.UserProfileFragment"
         android:label="@string/title_detail"
         tools:layout="@layout/fragment_user_profile">
-        <deepLink
-            android:id="@+id/deepLink"
-            android:autoVerify="true"
-            app:uri="www.example.com/user/{userName}" />
         <argument
             android:name="userName"
             app:argType="string" />

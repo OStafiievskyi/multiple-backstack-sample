@@ -57,10 +57,10 @@ class RootTabContainerFragment : Fragment(R.layout.fragment_root) {
     }
 
     private fun detachRoots(newRootTag: String): FragmentTransaction {
-        var transaction = childFragmentManager.beginTransaction()
+        val transaction = childFragmentManager.beginTransaction()
         rootTags.filter { it != newRootTag }.forEach {
             childFragmentManager.findFragmentByTag(it)?.let { fragment ->
-                transaction = transaction.detach(fragment)
+                transaction.detach(fragment)
             }
         }
         return transaction

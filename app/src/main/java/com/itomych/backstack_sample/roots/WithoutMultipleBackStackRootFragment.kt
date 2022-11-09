@@ -74,7 +74,8 @@ class WithoutMultipleBackStackRootFragment : Fragment(R.layout.fragment_root) {
                 else -> false
             }
         }
-        binding.bottomNav.selectedItemId = R.id.home
+        if (savedInstanceState == null)
+            binding.bottomNav.selectedItemId = R.id.home
     }
 
     private fun <T : Fragment> openRootFragment(
